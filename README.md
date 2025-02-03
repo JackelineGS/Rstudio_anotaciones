@@ -56,3 +56,129 @@ No normal: mayor a 3.5 o menor a 2.5
 
 Linea y curva
 
+## Conceptos basicos en laspruebas de significancia de la hipótesis nula
+Topicos: comparacion de grupos
+
+Inferencia: busca conocer las caracteristicas de una población a partir de las caracteristicas de una muestra
+Articulo de tipos de muestreo: 
+
+- Intervalos de confianza (regresiones)
+- Test de significancia de la hipótesis nula
+
+1. Especificar las hipótesis (nula y alterna)
+2. Elegir un nivel de significancia (arbitrario 0.05)
+3. Realizar la prueba de hipótesis (aplicar el test estadistico)
+4. Comparar el valor p y nivel alfa (valor teorico vs valor empirico)
+5. Decidir si rechazar o no la Hipótesis nula
+
+A qué hace referencia la hipótesis nula y alterna? Son conjeturas acerca de un modelo estadísticop de la población basado en una muestra de la misma. 
+La H0 habitualmente afirma que algo de interés es igual a 0, mientras que la hipótesis alterna suele expresar lo contrario.
+H0: No hay diferencia
+H1: Hay diferencia
+
+Valor p: 
+- mientras mas pequeño va a haber una mayor discrepancia con la hipótesis nula
+- Probabilidad de que la hipótesis nula sea cierta en la población 
+Si p< 0.05 es poco probable que la hipótesis nula sea cierta en la población (resultado estadisticamente significativo)
+
+<0.05 : estadisticamente significativa
+>= : no existe una asociación "estadisticamente"
+
+- Crisis de replicabilidad
+- Valor p
+
+Pruebas parametricas: Se cumplen cuando las variabls cumplen ciertos requisitos en relación al tamaño de muestra y la distribución (trabaja con datos numéricos)
+Pruebas no parametricas: se emplean cuando las variables no cumplen con los requisitos para el empleo de las pruebas paramétricas (trabajan con datos categóricos)
+
+Cat v cat 
+No parametrica: trabajan con variables categóricas
+Chi-cuadrado: chisq.test(cat1, cat2)
+Fisher: fisher.test(cat1, cat2)
+
+
+Prueba de Chi- cuadrado
+    Se utiliza cuando menos del 20% de celdas tienen frecuencias esperadas menores a 5.
+
+Prueba de Fisher
+    Se utilizan cuando 20% o más de celdas tienen frecuencias esperadas menores a 5. 
+
+Hipótesis para ambas pruebas:
+La proporción de muerte en fumadores es diferente que en no fumadores?
+H0: La proporcion de muerte es igual en no fumadores que en fumadores
+H1: La proporcion de muerte es diferente en fumadores que en no fumadores
+
+H0: La proporcion de personas con depresión no es difrente entre V y M
+H1: La proporcion de personas con depresion es diferente en M y V 
+
+La frecuecua esperada es el valor que esperamos obtener en caso no hubiera diferencia
+Usamos los datos de frecuencia observada 
+(Fumador total * no muerio total)/total total
+(Fumador total*murio)/ total total 
+
+
+Tabla 2x2 cada uno 25% = basta con que una tenga menos de 5 para que no se cumpla chi
+tabla 2*3 cada uno 16.7% = dos celdas tengas valor de 5 o menos para usar la prueba de fisher 
+tabla 2*4  cada uno tiene 12.5% = dos celdas tengas frecuencias esperadas menores a 5
+
+Primero se almacena los analisis dentro de un objeto para ver la frecuencia esperada y de alli decidir si se usa chi o Fisher
+
+
+Numerica vs Categórica:
+Una variable numérica en dos grupos independientes
+- Paramétrica
+    T student para grupos independientes
+    T de Welch
+- No paramétrica
+    U de Mann-Whitney
+
+Si vemos que el tamaño de muestra en un grupo es mayor o igual a 30 continuamos evaluando la normalidad y homocedasticidad
+
+Si - Ttudent
+Usamos la media
+H0: media es igual en M y V (No hay diferencias estadisticamente significativa)
+H1: media es diferente M y V (Hay diferencias estadisticamente significativa)
+
+No - TWelch
+Si vemos que el tamaño de muestra en un grupo es menor o igual a 30 aplicamos el estadistico de U de Mann-Whitney 
+Usamos la mediana
+H0: mediana igual en M y V (No hay diferencias estadisticamente significativa)
+H1: mediana diferente en M y V (Hay diferencias estadisticamente significativa)
+
+Normalidad
+H0: Los datos tienden a una distribución normal
+H1: Los datos no tienen una distribución normal 
+
+Asimetrí(Skewnnes):  -0.5 a 0.5                     
+Kurtosis: 2.5 a 3.5  
+
+Levene test (Homocedasticidad)
+H0: El grupo de adolescentes y jóvenes presentan varianzas iguales
+H1: El grupo de adolescentes y jóvenes no presentan varianzas iguales
+
+Si vemos que el tamaño de muestra en un grupo es menor a 30 o no es normal usamos U-Mann-Whitney
+
+
+Una variable numérica en dos grupos pareados
+- Paramétrica
+    T de Student para grupos pareados
+- No paramétrica
+    Rangos con signo de Wilcoxon
+
+Una variable numérica en más de dos grupos independientes
+- Paramétrica
+    Anova de Fisher
+    Anova de Welch
+- No paramétrica
+    Kruskal-Waillis 
+
+
+
+Numerica vs numérica
+Dos variables numéricas en grupos independientes
+- Paramétrica
+    Pearson
+- No paramétrica
+    Spearman
+
+
+
