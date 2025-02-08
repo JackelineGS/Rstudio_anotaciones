@@ -172,7 +172,6 @@ Una variable numérica en más de dos grupos independientes
     Kruskal-Waillis 
 
 
-
 Numerica vs numérica
 Dos variables numéricas en grupos independientes
 - Paramétrica
@@ -180,5 +179,85 @@ Dos variables numéricas en grupos independientes
 - No paramétrica
     Spearman
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
+## Regresiones
+
+Y = CONS + B1*X 
+Y: Valor numérico de V.D
+X: Valor numerico de V.I
+B1: pendiente o coeficiente 
+B0 o intercepto: valor de "y" cuando "x" es cero 
+
+# Regresiones lineales con VI (numerica)
+
+Estandar VI(numerica): 
+En la población por cada unidad adicional de la VI, la VD (desenlace)
+fue en promedio (coeficiente de regresión lineal) mayor/menor. 
+Este resultado fue estadisticamente signifixativo.
+
+En la población, por cada cm de incremento en el PA (unidad adicional 
+de la variable independiente - VI), la IMC (desenlace -VD) fue en 
+promedio 0.5 Kg (coeficiente de regresión lineal) mayor o menor (signo).
+Este resultado fue estadisticamente significativo.
+
+Esquema del comando: 
+Función de regresion lineal 
+variable dependiente
+Variable independiente
+Nombre de la base de datos
+
+Resultado:
+1. Coeficientes
+2. Error stándar de los Coef.
+3. Valor t: Coef/Se
+
+Intervalo de confianza
+Beta debe estar dentro del intervalo de confianza
+
+## Regresión lineal con VI dicotómica
+
+Categorias: 
+cat de referencia = 0 
+cat de exposicion = 1 
+
+La persona A tiene mas edad con respecto a la B
+La persona A tiene mas edad respecto a quien tiene menor edad 
+
+Cuando evaluo la regresion en variables categoricas se halla un promedio
+en ambas categorias y se compara. 
+
+Y = CONS + B1*X 
+
+El B1 es el promedio de "Y" en cat.Exposición - promedio de "Y" 
+en cat. Referencia   
+El intercepto es la nota promedio en la categoría de referencia
+
+### Interpretacion:
+En la población evaluada, la media de la nota en el sexo femenino fue 
+2.3 puntos menos en comparación al sexo masculino.
+El resultado fue estadisticamente significativo.
+
+En la población, la media de la nota en quienes tienen obesidad
+fue 0.36 puntos menos en comparación a quienes tienen peso normal.
+Este resultado fue/no fue estadisticamente significativo. 
+
+
+
+# Interpretacion (residuos - Coeficiente de determinación)
+R2: Determina el grado de variabilidad (el ancho) de la distribución
+de los datos en el eje Y que puede ser explicada por la variable X
+En regresiones lineales el R de pearson es igual a R2 
+
+
+
+## Normalidad de residuos 
+Explicar mejor el skewness, (no normal)
+Asumiremos como normal -0.5 a 0.5 
+No nomral: menores a -0.5 o mayores a 0.5 
+
+Kurtosis
+Asumiremos como normal 2.5 a 3.5 
+No normal: mayor a 3.5 o menor a 2.5 
 
